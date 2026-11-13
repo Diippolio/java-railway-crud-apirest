@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@RequestMapping("/productos/")
+@RequestMapping("/productos")
 public class ProductoController {
 
     
