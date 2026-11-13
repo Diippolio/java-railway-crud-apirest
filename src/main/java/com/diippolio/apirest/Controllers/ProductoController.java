@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.diippolio.apirest.Repositories.ProductoRepository;
+
+import jakarta.transaction.Transactional;
+
+
 import com.diippolio.apirest.Entities.Producto;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +22,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@RequestMapping("/productos")
+@RequestMapping("/productos/")
 public class ProductoController {
 
     
@@ -41,6 +45,7 @@ public class ProductoController {
     }
 
     @PostMapping
+    @Transactional
     public Producto createProducto(@RequestBody Producto producto){
         return productoRepository.save(producto);
     }
